@@ -26,6 +26,7 @@ export default {
   },
   watch: {
     value (val) {
+      // this.$store.dispatch('updateValue', this, this.changeVal(val))
       this.$emit('changeColor', this, this.changeVal(val))
     }
   },

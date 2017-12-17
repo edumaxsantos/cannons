@@ -14,22 +14,18 @@ const store = new Vuex.Store({
   },
   mutations: {
     addCannon (state, obj) {
-      //state.cannons[obj.id] = obj;
       state.cannons.push(obj)
     },
-    removeCannon (state, obj) { 
+    removeCannon (state, obj) {
       let index = -1
       state.cannons.forEach((ele, i) => {
         if (ele.id === obj.id) {
           index = i
-          return
+          // return
         }
       })
       console.log(index)
       state.cannons.splice(index, 1)
-    },
-    updateValue (state, value) {
-      console.log(state)
     }
   },
   actions: {
@@ -39,8 +35,8 @@ const store = new Vuex.Store({
     removeCannon (context, obj) {
       context.commit('removeCannon', obj)
     },
-    updateValue (context, value) {
-      context.commit('updateValue', value)
+    updateValue (context, obj) {
+      context.commit('updateValue', obj)
     }
   },
   getters: {

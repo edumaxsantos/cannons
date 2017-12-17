@@ -1,16 +1,20 @@
 <template>
   <div
-    :id="id"
+    :id="'color'+id"
     class="colorView"/>
 </template>
 <script>
 export default {
+  props: ['id', 'color'],
   data () {
-    return {}
+    return {
+    }
   },
-  computed: {
-    id () {
-      // return this.$store.state.
+  watch: {
+    color () {
+      let val = this.color
+      let colEl = document.getElementById('color' + this.id)
+      colEl.style.backgroundColor = 'rgb(' + val.slice(0, 3) + ', ' + val.slice(3, 6) + ', ' + val.slice(6, 9) + ')'
     }
   }
 }

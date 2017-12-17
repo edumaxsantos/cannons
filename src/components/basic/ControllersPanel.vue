@@ -10,9 +10,12 @@
 <script>
 import Controller from './Controller'
 export default {
-  props: ['controllers'],
+  props: ['controllers', 'parentId'],
   data () {
     return {
+      red: '000',
+      green: '000',
+      blue: '000'
     }
   },
   components: {
@@ -20,14 +23,18 @@ export default {
   },
   methods: {
     colors (that, value) {
-      // console.log(this.$store.state)
-      // console.log('value controllers panel')
-      // console.log(that)
-      // console.log(value)
-    }
-  },
-  created () {
+      let color = ''
+      if (that.name === 'Red') {
+        this.red = value
+      } else if (that.name === 'Green') {
+        this.green = value
+      } else if (that.name === 'Blue') {
+        this.blue = value
+      }
 
+      color = this.red + this.green + this.blue
+      this.$emit('colorChanged', color)
+    }
   }
 }
 </script>

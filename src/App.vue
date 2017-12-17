@@ -39,19 +39,16 @@ export default {
       cannon.controllers = [{
         min: 0,
         max: 255,
-        value: 0,
         name: 'Red',
         type: 'color'
       }, {
         min: 0,
         max: 255,
-        value: 0,
         name: 'Green',
         type: 'color'
       }, {
         min: 0,
         max: 255,
-        value: 0,
         name: 'Blue',
         type: 'color'
       }]

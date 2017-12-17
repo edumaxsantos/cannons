@@ -16,8 +16,10 @@
         </span>
       </a>
     </header>
-    <color-view/>
-    <controllers-panel :controllers="cannon.controllers" />
+    <color-view 
+      :id="cannon.id"
+      :color="color"/>
+    <controllers-panel :controllers="cannon.controllers" :parentId="cannon.id" @colorChanged="colors"/>
   </div>
 </template>
 
@@ -28,7 +30,8 @@ export default {
   props: ['cannon'],
   data () {
     return {
-      name: this.cannon.name
+      name: this.cannon.name,
+      color: '000000555'
     }
   },
   components: {
@@ -38,6 +41,9 @@ export default {
   methods: {
     remove () {
       this.$store.dispatch('removeCannon', this.cannon)
+    },
+    colors (value) {
+      this.color = value
     }
   }
 }
