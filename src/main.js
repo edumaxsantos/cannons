@@ -24,7 +24,6 @@ const store = new Vuex.Store({
           // return
         }
       })
-      console.log(index)
       state.cannons.splice(index, 1)
     }
   },

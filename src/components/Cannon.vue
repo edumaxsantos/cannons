@@ -50,7 +50,7 @@ export default {
 </script>
 <style scoped>
   .cannon {
-    width: 20vw;
+    width: 25vw;
     height: fit-content;
     display: flex;
     flex-direction: column;
